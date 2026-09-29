@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Positive or Negative</title>
+
+    <script>
+            function givennumber() {
+              let number = parseInt(document.getElementById("a1").value);
+
+              if (number > 0) {
+                document.getElementById("a2").value =
+                  "given number " + number + " is Positive";
+              } else {
+                document.getElementById("a2").value =
+                  "given number " + number + " is Negative";
+              }
+            }
+
+          function givennum(){
+
+          let a = parseInt(document.getElementById("b1").value);
+          let b = parseInt(document.getElementById("b2").value);
+
+          if(a<b){
+              document.getElementById("b3").value =
+               "num a is smaller then num b";
+          }
+          else{
+              document.getElementById("b3").value =
+              "num b is smaller then num a";
+          }
+      }
+
+       function checknum(){
+          let a = parseInt(document.getElementById("c1").value)
+          if(a%3==0)
+          document.getElementById("c2").value =
+              a +"is divisible by 3";
+          else{
+              document.getElementById("c2").value =
+              a+ "is not divisible by 3";
+          }
+       }
+
+      function anynum() {
+        let a = parseInt(document.getElementById("d1").value);
+        if (a % 2 == 0)
+          document.getElementById("d2").value = a + " is a even number";
+        else {
+          document.getElementById("d2").value = a + " is a odd number";
+        }
+      }
+
+    function calculateBill() {
+    let bill = parseInt(document.getElementById("e1").value);
+
+    if (bill > 5000) {
+        let discount = bill * 20 / 100;
+        let finalBill = bill - discount;
+
+        document.getElementById("e2").value =
+            "Bill: " + bill + ", Discount: " + discount +
+            ", Final Bill: " + finalBill;
+    }
+    else {
+        document.getElementById("e2").value =
+            "Bill: " + bill + ", No Discount, Final Bill: " + bill;
+    }
+}
+    </script>
+  </head>
+  <body>
+    <h1>Given Number is Positive or Negative</h1>
+
+    <label>Enter Your Number:</label>
+    <input type="text" id="a1" /> <br> <br>
+    <label>Result:</label>
+    <input type="text" id="a2" size="30" /> <br> <br>
+    <button onclick="givennumber()">Check the Number</button>
+
+    <h1>Given Number is Smallest among two values</h1>
+
+    <label>Enter Your Num a:</label>    
+    <input type="text" id="b1" /> <br> <br>
+    <label>Enter Your Num b:</label>
+    <input type="text" id="b2" /> <br><br>
+    <label>Result:</label>
+    <input type="text" id="b3" size="30"/> <br> <br>
+    <button onclick="givennum()">Check smallest number</button>  
+
+    <h1>Given Number is Divisible by 3 or not</h1>
+
+    <label>Enter Your Number:</label>
+    <input type="text" id="c1" /> <br> <br>
+    <label>Result:</label>
+    <input type="text" id="c2" size="30" /> <br> <br>
+    <button onclick="checknum()">Check the Number</button> 
+
+    <h1>Given Number is Odd or Even </h1>
+
+    <label>Enter Your Number:</label>
+    <input type="text" id="d1" /> <br> <br>
+    <label>Result:</label>
+    <input type="text" id="d2" size="30" /> <br> <br>
+    <button onclick="anynum()">Check the Number</button>
+
+
+     <h1>Bill Amount and Discount</h1>
+    <label>Enter Bill Amount:</label>
+    <input type="text" id="e1" /> <br /><br />
+    <label>Result:</label>
+    <input type="text" id="e2" size="40" /> <br /><br />
+    <button onclick="calculateBill()">Calculate Bill</button>
+  </body>
+</html>
